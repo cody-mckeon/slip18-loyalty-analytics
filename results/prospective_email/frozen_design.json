@@ -1,0 +1,27 @@
+{
+  "stage": "specified before experiment outcome simulation",
+  "historical_seed": 20250401,
+  "historical_n": 20000,
+  "preperiod_sd": 317.7069562562108,
+  "eligible_population": 100000,
+  "channel": "email only",
+  "offer_face_value": 50.0,
+  "treatment_contact_cost": 0.25,
+  "fixed_rollout_cost": 100000,
+  "minimum_net_upside_after_fixed_cost": 900000,
+  "business_mde": 10.0,
+  "power": 0.8,
+  "alpha": 0.05,
+  "test_counts": {
+    "control": 15845,
+    "treatment": 15845,
+    "total": 31690,
+    "mde": 10.0,
+    "sd": 317.7069562562108,
+    "power": 0.8,
+    "alpha": 0.05,
+    "ratio": 1.0
+  },
+  "feasible": true,
+  "prespecified_decision": "require positive lower 95% CI AND point estimate >= MDE"
+}

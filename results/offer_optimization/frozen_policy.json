@@ -1,0 +1,30 @@
+{
+  "stage": "Training complete; policy frozen before holdout outcomes generated",
+  "training_seed": 20270110,
+  "evaluation_seed": 20270111,
+  "train_size": 160000,
+  "eval_size": 90000,
+  "offer_arms_dollars": [
+    0,
+    25,
+    50,
+    75
+  ],
+  "pre_treatment_segments": [
+    "occasional",
+    "regular",
+    "frequent"
+  ],
+  "policy": {
+    "occasional": 50,
+    "regular": 75,
+    "frequent": 50
+  },
+  "selection_method": "Maximize training mean net contribution within each segment",
+  "primary_comparison": "personalized_vs_blanket50",
+  "secondary_comparison": "personalized_vs_no_offer",
+  "alpha_primary": 0.05,
+  "no_early_peeking": true,
+  "independent_holdout": true,
+  "fictional": true
+}

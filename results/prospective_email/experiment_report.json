@@ -1,0 +1,35 @@
+{
+  "experiment_seed": 20261201,
+  "checks": {
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "total": 31690,
+    "control": 15845,
+    "treatment": 15845,
+    "srm_p": 1.0
+  },
+  "groups": {
+    "0": {
+      "assigned": 15845,
+      "visits_rate": 0.32496055538024615,
+      "redemption_rate": 0,
+      "net_profit_per_customer": 111.90128873461659
+    },
+    "1": {
+      "assigned": 15845,
+      "visits_rate": 0.41565162511833387,
+      "redemption_rate": 0.23452193120858314,
+      "net_profit_per_customer": 129.1517608078258
+    }
+  },
+  "effect": 17.25047207320921,
+  "lower_95": 9.93227789081001,
+  "upper_95": 24.56866625560841,
+  "p_value": 3.836776604018228e-06,
+  "statistical_criterion_met": true,
+  "economic_point_target_met": true,
+  "scenario_rollout_contribution_at_100k": 1725047.207320921,
+  "scenario_rollout_net_after_fixed_cost": 1625047.207320921,
+  "decision": "Advance for further controlled evaluation"
+}

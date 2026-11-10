@@ -25,6 +25,9 @@ def build(out: Path | None = None) -> Path:
         raise RuntimeError("Dashboard data injection failed")
     destination = out or (ROOT / "dashboard.html")
     destination.write_text(html, encoding="utf-8")
+    # Keep the root entry point aligned with the generated dashboard.
+    if destination.resolve() == (ROOT / "dashboard.html").resolve():
+        (ROOT / "index.html").write_text(html, encoding="utf-8")
     return destination
 
 

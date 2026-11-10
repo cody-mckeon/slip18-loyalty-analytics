@@ -98,3 +98,19 @@ Read [`SEGMENTATION_CASE_STUDY.md`](SEGMENTATION_CASE_STUDY.md) for the business
 Seeded results: learned policy `occasional: $50 / regular: $75 / frequent: $50`; evaluation ITT policy vs blanket $50 **+$5.77 per assigned customer** (95% CI **$0.19 to $11.35**, p **0.0427**). The unadjusted result is marginal and simulation-specific. Policy vs no offer is **+$5.87** (CI **−$0.18 to $11.92**, p **0.0570**). The evaluation sample size was chosen for the demonstration, not prospectively powered. The analyst must not infer that real customers would respond similarly.
 
 Use [`GITHUB_SETUP.md`](GITHUB_SETUP.md) for repository publication steps. Generated customer-level CSVs are ignored by Git because they can be reproduced; summary JSON snapshots and code remain reviewable. No live GitHub publication or AI agent is claimed.
+
+### Milestone 5: executive decision dashboard
+
+Open [`dashboard.html`](dashboard.html) in any modern browser (no server, network, or dependencies required). The dashboard has separate views for the **prospectively planned fictional email experiment** and **independently evaluated fictional personalized policy**. It includes executive-facing effect estimates, uncertainty, randomized-group comparisons, frozen per-tier offers, plain-English methodology, practical limitations, and an explicitly labeled illustrative rollout scenario. The simulator's baseline 24,000-person study is preserved separately in the code and narrative; no outcomes are merged between experiments.
+
+The interactive audience-size and fixed-cost controls calculate a **scenario**, not a predictive distribution or new experimental result. Confidence-interval endpoint projections are shown as sensitivity values rather than a rollout forecast interval. The policy's primary comparison is unadjusted and marginal; the secondary comparison against no offer does not cross the 5% significance threshold.
+
+Rebuild the self-contained dashboard directly from versioned source JSON summaries:
+
+```bash
+python3 build_dashboard.py
+python3 -m unittest -q
+# Open dashboard.html locally in your browser
+```
+
+Sources are `results/prospective_email/{frozen_design,experiment_report}.json` and `results/offer_optimization/{frozen_policy,evaluation_report}.json`. `dashboard_template.html` controls presentation, `build_dashboard.py` validates and embeds the source reports, and `test_dashboard.py` checks key arithmetic and build integrity. No customer-level CSV is embedded or sent to a service. If results change, rerun the relevant study and rebuild; do not manually edit values inside generated `dashboard.html`.
